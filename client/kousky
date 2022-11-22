@@ -1,0 +1,179 @@
+// const response = fetch("http://localhost:4000/")
+// .then((res) => res.json())
+// .then((data) => console.log(data));
+
+// const response3 = fetch("http://localhost:4000/")
+// .then((res) => res.json())
+// .then((data) => console.log("data na 30" + data));
+
+// <p>While I was creating it, I have : </p>
+//             <ul>
+//               <li>
+//                 learned to create custom hooks. It enabled me to place the logic
+//                 of the address component and the component(JSX) itself into two
+//                 different files.
+//               </li>
+//               <li>
+//                 faced the challange of storing the state of the App into local
+//                 storage: retrieving the data from local storage and using
+//                 useState hook to store it was challenging. To acomplish this
+//                 task, I had to dive deeper into how components are rendered and
+//                 I also had to learn more about the useState and useEffect hooks.
+//               </li>
+//             </ul>
+
+// const dispatch = useDispatch();
+// const state = useSelector((state) => state);
+
+// console.log(state);
+
+// // //get data from local storage
+// // // useEffect(() => {
+// // const storedState = JSON.parse(localStorage.getItem("shop"));
+// // console.log(storedState);
+// // const deliveryAddress = storedState.delivery.deliveryAddress;
+
+// // console.log(deliveryAddress);
+// // // });
+
+// useEffect(() => {
+//   dispatch(deliveryActions.setDeliveryAddress(deliveryAddress));
+// }, []);
+
+//   //prettier-ignore
+//   const initialValues = {firstName: "", secondName: "", email: "",
+//     streetName: "", streetNumber: "", city: "", province: "", state: "",
+//     zipCode: "",
+//   };
+
+// // rgb(101, 159, 0)
+
+// <div className="form-item agreement">
+//             <label className="label-agree">
+//               <div>I agree with terms</div>
+//               <span
+//                 className="terms-and-conditions"
+//                 onClick={() => {
+//                   navigate("/terms-and-conditions");
+//                 }}
+//               >
+//                 and conditions of the e-sh
+//               </span>
+//             </label>
+//             <input
+//               className="input-agreement"
+//               type="checkbox"
+//               onChange={(e) => {
+//                 setAddress({
+//                   ...address,
+//                   name: e.target.value,
+//                 });
+//               }}
+//             />
+//           </div>
+
+// dispatch(
+//   uiActions.showNotification({
+//     open: true,
+//     message: "Sending Request",
+//     type: "warning",
+//   })
+// );
+
+// //App.js
+// import { useSelector, useDispatch } from "react-redux";
+// import { plus, decrement } from "../actions/index.js";
+
+// const counter = useSelector((state) => state.counter);
+// const isLogged = useSelector((state) => state.isLogged);
+// const dispatch = useDispatch();
+
+// <button
+//         onClick={() => {
+//           return dispatch(plus(5));
+//         }}
+//       >
+//         +
+//       </button>
+//       <button
+//         onClick={() => {
+//           return dispatch(decrement());
+//         }}
+//       >
+//         -
+//       </button>
+
+// //actions
+
+// export const plus = (nr) => {
+//   return {
+//     type: "INCREMENT",
+//     payload: nr,
+//   };
+// };
+
+// export const decrement = () => {
+//   return {
+//     type: "DECREMENT",
+//   };
+// };
+
+// //Reducers
+// import counterReducer from "./counter";
+// import loggedReducer from "./isLogged";
+// import { combineReducers } from "redux";
+
+// const allReducers = combineReducers({
+//   counter: counterReducer,
+//   isLogged: loggedReducer,
+// });
+
+// export default allReducers;
+
+// const loggedReducer = (state = true, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//     case "SIGN_IN":
+//       return !state;
+//   }
+// };
+
+// export default loggedReducer;
+
+// const counterReducer = (state = 0, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//     case "INCREMENT":
+//       return state + action.payload;
+//     case "DECREMENT":
+//       return state - 1;
+//   }
+// };
+
+// export default counterReducer;
+
+// // Index.js
+// const store = createStore(
+//   allReducers,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
+
+// import { legacy_createStore as createStore } from "redux";
+// import allReducers from "./reducers";
+// import { Provider } from "react-redux";
+
+// //////////////////////////////// OLD
+// <h4 className="contactlist-heading">ContactList
+//       <button className="btn btn-primary right">Add Contact</button></h4>
+
+// {
+
+//   "extends":["react-app","prettier"],
+//   "rules": {
+//       "prettier/prettier": "error" },
+
+//   "plugins": ["prettier"]
+
+//   }

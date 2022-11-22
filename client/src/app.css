@@ -1,0 +1,188 @@
+ /* * { margin: 0px;
+     padding: 0px} */
+
+
+
+
+
+.div-search-filter {
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:-20px;
+    margin-bottom: 40px;
+  
+
+}
+
+.input-search-filter {
+    width:400px;
+    height: 40px;
+    border-radius:10px;
+    border:2px solid grey;
+    padding-left:15px;
+    background-image: url("images/search.svg");
+    background-repeat: no-repeat;
+    background-position: 370px;
+    color: rgb(43, 43, 43)
+}
+    
+
+
+
+
+     .edit {
+  
+    width: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: 16px;
+    float: right;
+    cursor: pointer
+    
+}
+
+footer {height:200px}
+
+.down {
+    float: right;
+
+}
+
+.yes {
+
+margin-top: 50px;
+width: 100px;
+margin-left: auto;
+margin-right: auto;
+
+}     
+
+.delete-contact {
+    border-bottom: none;
+    margin-top: 50px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-page {
+    margin-top:50px;
+    font-size:20px
+}
+
+.fifty {
+    margin-bottom: 150px;
+    width: 250px;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+}
+
+.content {
+    padding:20px;
+    margin-bottom: 50px;
+    border:1px solid grey;
+    border-radius: 5px
+}
+
+.center {
+    width:465px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.right {
+float: right;
+margin-top: -5px !important
+}
+
+h4.contact-list-heading {
+    margin-bottom:30px;
+    order-bottom: 1px solid gray;
+    padding-bottom:20px;
+
+    width:400px;
+    margin-right:auto;
+    margin-left: auto;
+}
+
+h2 {padding:10px}
+ 
+ .addcontact {
+    width:400px;
+    margin-right:auto;
+    margin-left: auto;
+        
+} 
+
+.header {
+text-align: center;
+border-bottom: 2px solid grey;
+margin-bottom:17px
+}
+
+.label {
+    display:block
+}
+
+.input {
+     margin-left: 20px;
+     margin-bottom: 10px;
+     margin-top: 3px
+    }
+
+.btn { 
+margin-top: 10px;
+}
+
+.contactlist {
+   
+    width:400px;
+    margin-right:auto;
+    margin-left: auto;
+
+}
+
+.contactCard {
+    padding-top:5px;
+    padding-bottom: 5px;
+    border-top:1px solid grey
+}
+
+.name-and-email {
+    display:inline-block;
+    margin-left:10px
+}
+
+.name-in-contact-card {
+    font-weight: bold
+}
+
+.person {
+
+    color: grey;
+    width: 25px;
+    margin-right: 20px;
+    position: relative;
+    top: -13px;
+    fill:  green
+  
+}
+
+.trash {
+    color: grey;
+    width: 20px;
+    margin-right: 20px;
+   
+    position: relative;
+    top: 16px;
+    float: right;
+    cursor: pointer
+    
+}
+
+
+
+
+
+
