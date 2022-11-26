@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Contact = require("./models/contact");
 const cors = require("cors");
+const controllers = require("./controllers/contollers");
+const node_cron = require("node-cron");
+
 const app = express();
 
 //connect to db
@@ -19,49 +21,36 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-//delete - delete data
-app.delete("/delete/:id", (req, res) => {
-  const id = req.params.id;
-  console.log(id);
+//controllers
+app.delete("/delete/:id", controllers.contact_delete);
 
-  Contact.findByIdAndDelete(id).then((result) => {
-    console.log("deleted");
-    res.send("ahoj");
-  });
-});
+app.post("/add", controllers.contact_add);
 
-//post - add data
-app.post("/add", (req, res) => {
-  console.log("jsem v post");
-  console.log(req.body);
+app.get("/", controllers.contact_retrieve);
 
-  const x = req.body.name;
+app.put("/edit/:id", controllers.contact_update);
 
-  const contact = new Contact({
-    id: req.body.id,
-    name: req.body.name,
-    email: req.body.email,
-  });
+//set database to default - every day
 
-  contact.save();
+const default_contacts = [
+  {
+    name: "Juicy Meat",
+    email: "juicy.meat@gmail.com",
+  },
+  {
+    name: "Hot Pepper",
+    email: "hot.pepper@gmail.com",
+  },
+  {
+    name: "Fresh Carrot",
+    email: "fresh.carrot@gmail.com",
+  },
+  {
+    name: "Green Sprout",
+    email: "green.sprout@gmail.com",
+  },
+];
 
-  console.log(contact);
-});
-
-//get - retrieve data
-app.get("/", (req, res) => {
-  console.log("jsem v /");
-
-  Contact.find()
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-//blog routes
-app.use((req, res) => {
-  res.status(404).render("404", { title: "404" });
+const reset_database = new CronJob("0 0 0 * * *", function () {
+  //will run every day at 12:00 AM
 });

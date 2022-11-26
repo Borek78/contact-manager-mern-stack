@@ -18,10 +18,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState([]);
-  const [updated, setUpdated] = useState(0);
-
-  console.log(contacts);
-  console.log(updated);
+  const [update, setUpdate] = useState(0);
 
   //RETRIEVING DATA
   useEffect(() => {
@@ -30,7 +27,7 @@ function App() {
       setContacts(response.data);
     };
     retrieveContacts();
-  }, [updated]);
+  }, [update]);
 
   //DELETE
   async function deleteContactHandler(id) {
@@ -38,8 +35,9 @@ function App() {
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });
-    setUpdated(updated + 1);
+
     setContacts(newContactList);
+    setUpdate(update + 1);
   }
 
   //ADD
@@ -49,23 +47,24 @@ function App() {
     await api.post("/add", newContact);
 
     setContacts([...contacts, newContact]);
-    setUpdated(updated + 1);
+    setUpdate(update + 1);
   };
 
   //UPDATE
   const updateContactHandler = async function (updatedContact) {
-    const { id } = updatedContact;
-    await api.put(`/contacts/${id}`, updatedContact);
+    const { id, name, email, _id } = updatedContact;
+    console.log(id);
+    await api.put(`/edit/${_id}`, updatedContact);
 
     const newContacts = contacts.map((contact) => {
       return contact.id === id ? updatedContact : contact;
     });
 
     setContacts(newContacts);
+    setUpdate(update + 1);
   };
 
   //SEARCH
-
   function searchHandler(a) {
     console.log("Search Term is: " + a);
     setSearchTerm(a);

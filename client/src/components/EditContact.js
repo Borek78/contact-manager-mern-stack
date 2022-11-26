@@ -5,12 +5,15 @@ function EditContact(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const { contact } = location.state;
-  const { id, name, email } = contact;
+  const { id, name, email, _id } = contact;
   const [updatedContact, updateContact] = useState({
+    _id: _id,
     id: id,
     name: name,
     email: email,
   });
+
+  console.log(contact);
 
   async function update(e) {
     e.preventDefault();
@@ -19,6 +22,7 @@ function EditContact(props) {
       alert("All the fields are MANDATORY");
     }
 
+    console.log(updatedContact);
     await props.updateContactHandler(updatedContact);
 
     navigate("/");
@@ -41,6 +45,7 @@ function EditContact(props) {
               type="text"
               onChange={(e) => {
                 updateContact({
+                  _id: _id,
                   id: id,
                   name: e.target.value,
                   email: updatedContact.email,
@@ -60,6 +65,7 @@ function EditContact(props) {
               type="text"
               onChange={(e) => {
                 updateContact({
+                  _id: _id,
                   id: id,
                   name: updatedContact.name,
                   email: e.target.value,

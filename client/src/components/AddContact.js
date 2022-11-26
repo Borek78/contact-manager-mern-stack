@@ -10,10 +10,10 @@ function AddContact(props) {
 
     if (contact.name === "" || contact.email === "") {
       alert("All the fields are MANDATORY");
+    } else {
+      await props.addContactHandler(contact);
+      navigate("/");
     }
-
-    await props.addContactHandler(contact);
-    navigate("/");
   }
 
   return (
